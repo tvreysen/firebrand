@@ -1,0 +1,49 @@
+
+<div class="header">
+  <h1>Message Board</h1>
+</div>
+
+<div [align]="'center'">
+  <h2>Add a new message</h2>
+  <form (ngSubmit)="addMessage()">
+    <div class="form-group">
+      <input type="text" placeholder="Your Name" [(ngModel)]="newMessageAuthor" name="author" required/>
+    </div>
+    <div class="form-group">
+      <textarea name="text" placeholder="Type your message" [(ngModel)]="newMessageText" required></textarea>
+    </div>
+    <button class="buttongreen" type="submit">Add Message</button>
+  </form>
+</div>
+
+<div class="box alternative" [align]="'center'">
+  <h2>Existing Messages</h2>
+   @if (messages$ | async; as messages) {
+      <table>
+        <thead>
+          <tr>
+            <th>Author</th>
+            <th>Message</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (messages.length > 0) {
+          @for (message of messages; track message) {
+            <tr app-message-item [message]="message"></tr>
+          }
+        }
+        </tbody>
+      </table>
+
+    <div>
+      @if (messages.length === 0) {
+        <p style="color: red; font-size: 30px; font: comic sans ms;">No messages available!</p>
+      }
+      </div>
+    }
+
+  <button class="buttonred" (click)="removeLastMessage()">Remove Last Message</button>
+</div>
+
+
+

@@ -46,6 +46,7 @@
     line-height: 100%;
     letter-spacing: -0.125rem;
     margin: 0;
+    padding: 5px;
     font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
@@ -74,7 +75,7 @@
   .content {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 50%;
     max-width: 700px;
     margin-bottom: 3rem;
   }
@@ -176,7 +177,7 @@
     }
   }
 
-    .header {
+  .header {
     background-color: #f1f1f1;
     text-align: center;
     padding: 10px;
@@ -188,6 +189,7 @@
   padding: 0;
   background-color: #333333;
   display: flex;
+  text-decoration: none;
 }
 
 .ul li a {
@@ -221,4 +223,109 @@ ul.topnav li a {
 ul.topnav li a:hover {
   background-color: #dddddd;
   color: black;
+}
+
+.buttongreen {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  opacity: 0.6;
+  margin: 5px;
+}
+
+.buttonred {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  opacity: 0.6;
+  margin: 5px;
+}
+
+
+
+.buttongreen:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
+  opacity: 1
+}
+
+.buttonred:hover {
+  background-color: #f44336; /* Red */
+  color: white;
+  opacity: 1
+}
+
+.box.standard {
+    /* Width and height apply to the content area */
+    width: auto;
+    height: auto;
+    
+    /* Padding and border are added *outside* the content area. */
+    padding: 25px;
+    border: 5px solid darkred;
+    
+    /* Margin adds space *outside* the box. */
+    margin: 20px;
+    
+    background-color: lightcoral;
+}
+
+/* --- Alternative box model styling --- */
+.box.alternative {
+    /* Setting the box-sizing property to border-box is the key difference. */
+    box-sizing: border-box;
+    /* Width and height now include padding and border. */
+    width: 75%;
+    height: auto;    
+    padding: 10px;
+    border: 5px solid rgb(87, 88, 87);
+    margin: 20px;
+    justify-content: center;
+    justify-self: center;
+    
+    background-color: rgb(222, 241, 222);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #90f17c;
+  font-size: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input, textarea {
+  width: 50%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
 }
